@@ -1,0 +1,24 @@
+
+.staticCont {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    animation: shadow-growth 10s infinite alternate;
+}
+
+.staticFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+@keyframes shadow-growth {
+    0% {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+    }
+  }
