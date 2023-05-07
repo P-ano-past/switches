@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [boxType, setBoxType] = useState(false);
   const [shadows, setShadows] = useState(false);
+  const [borderBox, setBorderBox] = useState(false);
   const [placement, setPlacement] = useState(false);
 
   return (
@@ -50,6 +51,8 @@ function App() {
                       setShadows={setShadows}
                       setPlacement={setPlacement}
                       placement={placement}
+                      setBorderBox={setBorderBox}
+                      borderBox={borderBox}
                     />
                   </Tab.Pane>
                   <Tab.Pane eventKey="Dynamic">

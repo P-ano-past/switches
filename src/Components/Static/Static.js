@@ -9,8 +9,13 @@ function Static(props) {
   const [num4, setNum4] = useState(false);
   const [showShade, setShowShade] = useState(false);
   const [showFlex, setShowFlex] = useState(false);
-  const shade = showShade ? "" : "staticCont";
-  const flex = showFlex ? "staticFlex" : "";
+  const [showBorderBox, setShowBorderBox] = useState(false);
+  const shade = showShade ? "staticCont" : "";
+  const flex = showFlex ? "staticFlex flexR" : "";
+  const flexC = showFlex ? "flexC" : "";
+  const flexR = showFlex ? "flexR" : "";
+  const changedBorder = showBorderBox ? "borderBubble" : "";
+  const heading = showBorderBox ? "headingFonts" : "";
 
   const handleOnChange = () => {
     setIsChecked(!isChecked);
@@ -44,6 +49,11 @@ function Static(props) {
     setShowFlex(!showFlex);
   };
 
+  const checkBB = () => {
+    props.setBorderBox(!props.borderBox);
+    setShowBorderBox(!showBorderBox);
+  };
+
   return (
     <Container className={shade}>
       <Row>
@@ -52,7 +62,7 @@ function Static(props) {
             console.log(`props: `, props);
           }}
         >
-          <h1>
+          <h1 className={heading}>
             <p>Static</p>
           </h1>
         </Col>
@@ -60,45 +70,67 @@ function Static(props) {
       <Row>
         <Row>
           <ul>
-            <li className={flex}>
+            <li className={changedBorder}>
               <Row>
-                <Col className={flex}>
-                  <p>#1</p>
+                <Col>
+                  <Row>
+                    <Col className={flexR}>
+                      <h3 className={heading}>
+                        <p>1.</p>
+                      </h3>
 
-                  <Col>
-                    <Form.Check
-                      type={switchType}
-                      onChange={handleMenu}
-                      label="This checkbox opens a menu for further interaction."
-                      checked={checkMenu}
-                    />
-                  </Col>
+                      <p>This checkbox opens a menu for further interaction.</p>
+                      <Form.Check
+                        type={switchType}
+                        onChange={handleMenu}
+                        checked={checkMenu}
+                      />
+                    </Col>
+                  </Row>
+
                   {checkMenu ? (
                     <Container>
                       <Row>
-                        <Col sm={3}>
-                          <Form.Check
-                            type={switchType}
-                            onChange={checkSwitch}
-                            label="Switch type"
-                            checked={props.boxType}
-                          />
+                        <Col sm={3} className={flex}>
+                          <Col className={flexR}>
+                            <p className="text">Switch type:</p>
+
+                            <Form.Check
+                              type={switchType}
+                              onChange={checkSwitch}
+                              checked={props.boxType}
+                            />
+                          </Col>
                         </Col>
-                        <Col sm={3}>
-                          <Form.Check
-                            type={switchType}
-                            onChange={checkShadows}
-                            label="Shadows"
-                            checked={props.shadows}
-                          />
+                        <Col sm={3} className={flex}>
+                          <Col className={flexR}>
+                            <p>Shadows</p>
+                            <Form.Check
+                              type={switchType}
+                              onChange={checkShadows}
+                              checked={props.shadows}
+                            />
+                          </Col>
                         </Col>
-                        <Col sm={3}>
-                          <Form.Check
-                            type={switchType}
-                            onChange={checkFlex}
-                            label="Flex"
-                            checked={props.placement}
-                          />
+                        <Col sm={3} className={flex}>
+                          <Col className={flexR}>
+                            <p>Flex</p>
+                            <Form.Check
+                              type={switchType}
+                              onChange={checkFlex}
+                              checked={props.placement}
+                            />
+                          </Col>
+                        </Col>
+                        <Col sm={3} className={flex}>
+                          <Col className={flexR}>
+                            <p>Styles</p>
+                            <Form.Check
+                              type={switchType}
+                              onChange={checkBB}
+                              checked={props.borderBox}
+                            />
+                          </Col>
                         </Col>
                       </Row>
                     </Container>
@@ -108,28 +140,27 @@ function Static(props) {
                 </Col>
               </Row>
             </li>
-            <li className={flex}>
+            <li className={changedBorder}>
               <Row>
-                <Col>
-                  <h3>
-                    <p>#2</p>
+                <Col className={flexR}>
+                  <h3 className={heading}>
+                    <p>2.</p>
                   </h3>
-
-                  <Form.Check
-                    type={switchType}
-                    label="This checkbox does nothing. There are no state handling functions
-              tied to this but it still functions as a check box."
-                  />
+                  <p>
+                    This checkbox does nothing. There are no state handling
+                    functions tied to this but it still functions as a check
+                    box.
+                  </p>
+                  <Form.Check type={switchType} />
                 </Col>
               </Row>
             </li>
-            <li className={flex}>
-              <Row className={flex}>
-                <Col className={flex}>
-                  <h3>
-                    <p>#3</p>
+            <li className={changedBorder}>
+              <Row>
+                <Col className={flexR}>
+                  <h3 className={heading}>
+                    <p>3.</p>
                   </h3>
-
                   <p>
                     This checkbox has state handling that links it to this
                     checkbox and number 4 because of its shared state value.
@@ -144,13 +175,12 @@ function Static(props) {
                 </Col>
               </Row>
             </li>
-            <li className={flex}>
-              <Row className={flex}>
-                <Col className={flex}>
-                  <h3>
-                    <p>#4</p>
-                  </h3>
-
+            <li className={changedBorder}>
+              <Row>
+                <Col className={flexR}>
+                  <h4 className={heading}>
+                    <p>4.</p>
+                  </h4>
                   <p>
                     This checkbox has state handling that links it to this
                     checkbox and number 3 because of its shared state value.
@@ -163,11 +193,11 @@ function Static(props) {
                 </Col>
               </Row>
             </li>
-            <li className={flex}>
-              <Row className={flex}>
-                <Col className={flex}>
-                  <h3>
-                    <p>#5</p>
+            <li className={changedBorder}>
+              <Row>
+                <Col className={flexR}>
+                  <h3 className={heading}>
+                    <p>5.</p>
                   </h3>
 
                   <p>This checkbox renders more information.</p>
