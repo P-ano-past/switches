@@ -57,6 +57,12 @@ function App() {
                   </Tab.Pane>
                   <Tab.Pane eventKey="Dynamic">
                     <Dynamic
+                      boxType={boxType}
+                      setBoxType={setBoxType}
+                      shadows={shadows}
+                      setShadows={setShadows}
+                      setPlacement={setPlacement}
+                      placement={placement}
                       setBorderBox={setBorderBox}
                       borderBox={borderBox}
                     />

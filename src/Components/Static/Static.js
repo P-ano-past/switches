@@ -5,11 +5,12 @@ import "./Static.css";
 function Static(props) {
   const [isChecked, setIsChecked] = useState(false);
   const [checkMenu, setCheckMenu] = useState(false);
-  const [switchType, setSwitchType] = useState();
+  const [switchType, setSwitchType] = useState(false);
   const [num4, setNum4] = useState(false);
   const [showShade, setShowShade] = useState(false);
   const [showFlex, setShowFlex] = useState(false);
   const [showBorderBox, setShowBorderBox] = useState(false);
+  const checkSwitchType = switchType ? "switch" : "checkbox";
   const shade = showShade ? "staticCont" : "";
   const flex = showFlex ? "staticFlex flexR" : "";
   const flexR = showFlex ? "flexR" : "";
@@ -29,13 +30,8 @@ function Static(props) {
   };
 
   const checkSwitch = () => {
-    if (props.boxType) {
-      setSwitchType("checkbox");
-      props.setBoxType(false);
-    } else {
-      setSwitchType("switch");
-      props.setBoxType(true);
-    }
+    props.setBoxType(!props.boxType);
+    setSwitchType(!switchType);
   };
 
   const checkShadows = () => {
@@ -80,7 +76,7 @@ function Static(props) {
 
                       <p>This checkbox opens a menu for further interaction.</p>
                       <Form.Check
-                        type={switchType}
+                        type={checkSwitchType}
                         onChange={handleMenu}
                         checked={checkMenu}
                       />
@@ -95,7 +91,7 @@ function Static(props) {
                             <p className="text">Switch type:</p>
 
                             <Form.Check
-                              type={switchType}
+                              type={checkSwitchType}
                               onChange={checkSwitch}
                               checked={props.boxType}
                             />
@@ -105,7 +101,7 @@ function Static(props) {
                           <Col className={flexR}>
                             <p>Shadows</p>
                             <Form.Check
-                              type={switchType}
+                              type={checkSwitchType}
                               onChange={checkShadows}
                               checked={props.shadows}
                             />
@@ -115,7 +111,7 @@ function Static(props) {
                           <Col className={flexR}>
                             <p>Flex</p>
                             <Form.Check
-                              type={switchType}
+                              type={checkSwitchType}
                               onChange={checkFlex}
                               checked={props.placement}
                             />
@@ -125,7 +121,7 @@ function Static(props) {
                           <Col className={flexR}>
                             <p>Styles</p>
                             <Form.Check
-                              type={switchType}
+                              type={checkSwitchType}
                               onChange={checkBB}
                               checked={props.borderBox}
                             />
@@ -150,7 +146,7 @@ function Static(props) {
                     functions tied to this but it still functions as a check
                     box.
                   </p>
-                  <Form.Check type={switchType} />
+                  <Form.Check type={checkSwitchType} />
                 </Col>
               </Row>
             </li>
@@ -168,7 +164,7 @@ function Static(props) {
                     value="Linked to check box 3"
                     name="Checkbox #2"
                     checked={isChecked}
-                    type={switchType}
+                    type={checkSwitchType}
                     onChange={handleOnChange}
                   />
                 </Col>
@@ -186,7 +182,7 @@ function Static(props) {
                   </p>
                   <Form.Check
                     checked={isChecked}
-                    type={switchType}
+                    type={checkSwitchType}
                     onChange={handleOnChange}
                   />
                 </Col>
@@ -203,7 +199,7 @@ function Static(props) {
 
                   <Form.Check
                     checked={num4}
-                    type={switchType}
+                    type={checkSwitchType}
                     onChange={handleNum4}
                   />
                 </Col>

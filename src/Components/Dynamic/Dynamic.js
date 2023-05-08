@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, FormCheck } from "react-bootstrap";
+import "./Dynamic.css";
 
 function Dynamic(props) {
   const [showBorderBox, setShowBorderBox] = useState(false);
   const [formText, setFormText] = useState({ item: "" });
   const [formArray, setFormArray] = useState([]);
   const [checkArray, setCheckArray] = useState([]);
+  const [showFlex, setShowFlex] = useState(false);
+  const [showShade, setShowShade] = useState(false);
+  const [switchType, setSwitchType] = useState();
   const heading = showBorderBox ? "headingFonts" : "";
+  const shade = showShade ? "staticCont" : "";
+  const flex = showFlex ? "staticFlex flexR" : "";
+  const flexR = showFlex ? "flexR" : "";
+  const changedBorder = showBorderBox ? "borderBubble" : "";
+  const checkSwitchType = switchType ? "switch" : "checkbox";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
-  }, [props.borderBox]);
+    setShowFlex(props.placement);
+    setShowShade(props.shadows);
+    setSwitchType(props.boxType);
+  }, [props.borderBox, props.placement, props.shadows, props.boxType]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,12 +58,11 @@ function Dynamic(props) {
       );
       setCheckArray(filteredCheckArray);
     }
-    console.log(`checkArray: `, checkArray);
   };
 
   return (
-    <Container>
-      <Row>
+    <Container className={shade}>
+      <Row className={flexR}>
         <Col
           onClick={() => {
             console.log(`props: `, props);
@@ -65,8 +76,8 @@ function Dynamic(props) {
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label htmlFor="item">Add item:</Form.Label>
+            <Form.Label htmlFor="item">Add item:</Form.Label>
+            <Form.Group className="mb-3 inputForm">
               <Form.Control
                 id="item"
                 type="text"
@@ -78,12 +89,7 @@ function Dynamic(props) {
                 placeholder="Add item"
                 required
               />
-              <Button
-                type="submit"
-                onClick={console.log(`formArray: `, formArray)}
-              >
-                Submit
-              </Button>
+              <Button type="submit">Submit</Button>
             </Form.Group>
           </Form>
         </Col>
@@ -98,9 +104,19 @@ function Dynamic(props) {
                     {index + 1}.&nbsp;{item.item}
                   </Col>
                   <FormCheck
+                    type={checkSwitchType}
                     onChange={() => handleCheck(index)}
                     checked={item.isActive}
                   />
+                  {item.isActive ? (
+                    <Button
+                      onClick={() =>
+                        setFormArray(formArray.filter((_, i) => i !== index))
+                      }
+                    >
+                      Delete
+                    </Button>
+                  ) : null}
                 </li>
               );
             })}
