@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, FormCheck } from "react-bootstrap";
 
 function Dynamic(props) {
   const [showBorderBox, setShowBorderBox] = useState(false);
-  const [formText, setFormText] = useState([]);
+  const [formText, setFormText] = useState({ item: "" });
   const [formArray, setFormArray] = useState([]);
   const [checkArray, setCheckArray] = useState([]);
   const heading = showBorderBox ? "headingFonts" : "";
@@ -20,18 +20,33 @@ function Dynamic(props) {
     for (let [key, value] of formData.entries()) {
       newItem[key] = value;
     }
-
+    newItem.isActive = false;
     setFormArray([...formArray, newItem]);
 
     e.target.reset();
   };
 
-  const handleCheck = () => {
-    for (let i = 0; i < formArray.length; i++) {
-      for (let j = 0; i < checkArray.length; j++) {
-        formArray[i].isActive = true;
-      }
+  const handleCheck = (index) => {
+    const updatedItem = {
+      ...formArray[index],
+      isActive: !formArray[index].isActive,
+    };
+    const updatedFormArray = [
+      ...formArray.slice(0, index),
+      updatedItem,
+      ...formArray.slice(index + 1),
+    ];
+    setFormArray(updatedFormArray);
+
+    if (updatedItem.isActive) {
+      setCheckArray([...checkArray, updatedItem]);
+    } else {
+      const filteredCheckArray = checkArray.filter(
+        (item) => item.item !== updatedItem.item
+      );
+      setCheckArray(filteredCheckArray);
     }
+    console.log(`checkArray: `, checkArray);
   };
 
   return (
@@ -56,14 +71,16 @@ function Dynamic(props) {
                 id="item"
                 type="text"
                 value={formText.item}
-                onChange={(e) => setFormText({ item: e.target.value })}
+                onChange={(e) =>
+                  setFormText({ ...formText, item: e.target.value })
+                }
                 name="item"
                 placeholder="Add item"
                 required
               />
               <Button
                 type="submit"
-                onClick={console.log(`checkArray: `, checkArray)}
+                onClick={console.log(`formArray: `, formArray)}
               >
                 Submit
               </Button>
@@ -75,13 +92,15 @@ function Dynamic(props) {
         <Col>
           <ul>
             {formArray.map((item, index) => {
-              handleCheck();
               return (
                 <li key={index}>
                   <Col>
                     {index + 1}.&nbsp;{item.item}
                   </Col>
-                  <FormCheck onChange={() => console.log(`thisi: `, this)} />
+                  <FormCheck
+                    onChange={() => handleCheck(index)}
+                    checked={item.isActive}
+                  />
                 </li>
               );
             })}
