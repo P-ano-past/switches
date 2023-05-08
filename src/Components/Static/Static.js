@@ -12,7 +12,6 @@ function Static(props) {
   const [showBorderBox, setShowBorderBox] = useState(false);
   const shade = showShade ? "staticCont" : "";
   const flex = showFlex ? "staticFlex flexR" : "";
-  const flexC = showFlex ? "flexC" : "";
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const heading = showBorderBox ? "headingFonts" : "";
@@ -218,8 +217,9 @@ function Static(props) {
           <Col>
             <p>
               This information is being rendered by its own hard coded state
-              handling functions. The ternary operator relies on the state
-              handling written for checkbox 5 for this to be rendered.
+              handling functions. The ternary operator that renders this text
+              relies on the state handling written for checkbox 5 for this to be
+              rendered.
             </p>
           </Col>
         ) : (

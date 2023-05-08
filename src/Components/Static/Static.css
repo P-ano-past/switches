@@ -7,7 +7,7 @@
 
 .staticCont {
   background-color: rgb(250, 250, 250);
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid rgb(216, 216, 216);
   border-radius: 10px;
   animation: shadow-growth 10s infinite alternate;
 }
@@ -39,6 +39,7 @@
 
 .borderBubble {
   border:1px solid rgba(0, 0, 0, 0.3) ;
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
   padding: 15px;
   margin: 5px;

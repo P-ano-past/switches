@@ -56,7 +56,10 @@ function App() {
                     />
                   </Tab.Pane>
                   <Tab.Pane eventKey="Dynamic">
-                    <Dynamic />
+                    <Dynamic
+                      setBorderBox={setBorderBox}
+                      borderBox={borderBox}
+                    />
                   </Tab.Pane>
                 </Tab.Content>
               </Col>
