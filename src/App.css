@@ -35,12 +35,16 @@
   background-color: RGB(60, 64, 66);
   color:#111;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .light {
   background-color: #fff;
   color: #111;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 @keyframes App-logo-spin {
