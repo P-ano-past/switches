@@ -85,6 +85,8 @@ function App() {
                       placement={placement}
                       setBorderBox={setBorderBox}
                       borderBox={borderBox}
+                      setDarkMode={setDarkMode}
+                      darkMode={darkMode}
                     />
                   </Tab.Pane>
                 </Tab.Content>

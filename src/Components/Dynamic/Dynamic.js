@@ -16,6 +16,7 @@ function Dynamic(props) {
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const checkSwitchType = switchType ? "switch" : "checkbox";
+  const dark = props.darkMode ? "darkDynamic" : "lightDynamic";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
@@ -63,7 +64,7 @@ function Dynamic(props) {
   };
 
   return (
-    <Container className={shade}>
+    <Container className={`${shade} `}>
       <Row className={flexR}>
         <Col
           onClick={() => {
@@ -89,7 +90,6 @@ function Dynamic(props) {
                 }
                 name="item"
                 placeholder="Add item"
-                // required
               />
               <Button type="submit">Submit</Button>
             </Form.Group>
@@ -97,7 +97,7 @@ function Dynamic(props) {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className={`${dark}`}>
           <ul>
             {formArray.map((item, index) => {
               return (
