@@ -59,7 +59,20 @@ function App() {
               <Col sm={9}>
                 <Tab.Content>
                   <Tab.Pane eventKey="Purpose">
-                    <Purpose />
+                    <Purpose
+                      boxType={boxType}
+                      setBoxType={setBoxType}
+                      shadows={shadows}
+                      setShadows={setShadows}
+                      setPlacement={setPlacement}
+                      placement={placement}
+                      setBorderBox={setBorderBox}
+                      borderBox={borderBox}
+                      setAll={setAll}
+                      all={all}
+                      setDarkMode={setDarkMode}
+                      darkMode={darkMode}
+                    />
                   </Tab.Pane>
                   <Tab.Pane eventKey="Static">
                     <Static
