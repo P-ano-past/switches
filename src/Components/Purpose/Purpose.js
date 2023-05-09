@@ -3,27 +3,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./Purpose.css";
 
 function Purpose(props) {
-  const [isChecked, setIsChecked] = useState(false);
-  const [checkMenu, setCheckMenu] = useState(false);
-  const [switchType, setSwitchType] = useState(false);
-  const [num4, setNum4] = useState(false);
-  const [showShade, setShowShade] = useState(false);
-  const [showFlex, setShowFlex] = useState(false);
   const [showBorderBox, setShowBorderBox] = useState(false);
-  const checkSwitchType = switchType ? "switch" : "checkbox";
-  const shade = showShade ? "staticCont" : "";
-  const flex = showFlex ? "staticFlex flexR" : "";
-  const flexR = showFlex ? "flexR" : "";
-  const changedBorder = showBorderBox ? "borderBubble" : "";
+  const [showShade, setShowShade] = useState(false);
   const heading = showBorderBox ? "headingFonts" : "";
-  const dark = props.darkMode ? "darkStatic" : "";
+  const shade = showShade ? "staticCont" : "";
+  const dark = props.darkMode ? "darkDynamic" : "lightDynamic";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
-    setShowFlex(props.placement);
     setShowShade(props.shadows);
-    setSwitchType(props.boxType);
-  }, [props.borderBox, props.placement, props.shadows, props.boxType]);
+  }, [props.borderBox, props.shadows]);
 
   return (
     <Container className={`${shade} ${dark}`}>
@@ -35,8 +24,9 @@ function Purpose(props) {
               console.log(`props: `, props);
             }}
           >
-            <h1 className="goalTitle">
-              <p className="goalTitle">Goal</p>
+            {/* <h1 className="headingFonts"> */}
+            <h1 className={`${heading} goalTitle`}>
+              <p>Goal</p>
             </h1>
           </Col>
         </Row>
@@ -53,7 +43,7 @@ function Purpose(props) {
         <Row>
           <Col lg={6}>
             <Col>
-              <h4 className="goalTitle"> Static</h4>
+              <h4 className={`${heading} goalTitle`}> Static</h4>
             </Col>
             <Col>
               <p>
@@ -69,7 +59,7 @@ function Purpose(props) {
           </Col>
           <Col lg={6}>
             <Col>
-              <h4 className="goalTitle">Dynamic</h4>
+              <h4 className={`${heading} goalTitle`}>Dynamic</h4>
             </Col>
             <Col>
               <p>
