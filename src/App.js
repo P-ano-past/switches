@@ -4,12 +4,14 @@ import Static from "./Components/Static/Static";
 import Dynamic from "./Components/Dynamic/Dynamic";
 import Purpose from "./Components/Purpose/Purpose";
 import { useState } from "react";
+import Allstyles from "./Components/Allstyles/Allstyles";
 
 function App() {
   const [boxType, setBoxType] = useState(false);
   const [shadows, setShadows] = useState(false);
   const [borderBox, setBorderBox] = useState(false);
   const [placement, setPlacement] = useState(false);
+  const [all, setAll] = useState(false);
 
   return (
     <div className="App">
@@ -21,8 +23,19 @@ function App() {
             </h1>
           </Col>
         </Row>
-
         <Row>
+          <Allstyles
+            boxType={boxType}
+            setBoxType={setBoxType}
+            shadows={shadows}
+            setShadows={setShadows}
+            setPlacement={setPlacement}
+            placement={placement}
+            setBorderBox={setBorderBox}
+            borderBox={borderBox}
+            setAll={setAll}
+            all={all}
+          />
           <Tab.Container id="left-tabs-example" defaultActiveKey="Purpose">
             <Row>
               <Col sm={3}>

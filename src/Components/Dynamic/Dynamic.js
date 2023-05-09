@@ -87,7 +87,7 @@ function Dynamic(props) {
                 }
                 name="item"
                 placeholder="Add item"
-                required
+                // required
               />
               <Button type="submit">Submit</Button>
             </Form.Group>
@@ -99,17 +99,21 @@ function Dynamic(props) {
           <ul>
             {formArray.map((item, index) => {
               return (
-                <li key={index}>
-                  <Col>
-                    {index + 1}.&nbsp;{item.item}
-                  </Col>
+                <li key={index} className="chbt">
                   <FormCheck
+                    className="listCh"
                     type={checkSwitchType}
                     onChange={() => handleCheck(index)}
                     checked={item.isActive}
+                    xs={3}
                   />
+                  <Col>
+                    {index + 1}.&nbsp;{item.item}
+                  </Col>
+
                   {item.isActive ? (
                     <Button
+                      variant="danger"
                       onClick={() =>
                         setFormArray(formArray.filter((_, i) => i !== index))
                       }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import "./Static.css";
 
@@ -16,6 +16,13 @@ function Static(props) {
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const heading = showBorderBox ? "headingFonts" : "";
+
+  useEffect(() => {
+    setShowBorderBox(props.borderBox);
+    setShowFlex(props.placement);
+    setShowShade(props.shadows);
+    setSwitchType(props.boxType);
+  }, [props.borderBox, props.placement, props.shadows, props.boxType]);
 
   const handleOnChange = () => {
     setIsChecked(!isChecked);
