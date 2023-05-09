@@ -16,6 +16,7 @@ function Static(props) {
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const heading = showBorderBox ? "headingFonts" : "";
+  const dark = props.darkMode ? "darkStatic" : "";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
@@ -57,7 +58,7 @@ function Static(props) {
   };
 
   return (
-    <Container className={shade}>
+    <Container className={`${shade} ${dark}`}>
       <Row>
         <Col
           onClick={() => {

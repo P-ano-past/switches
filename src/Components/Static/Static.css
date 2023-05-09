@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.darkStatic {
+  background-color: rgb(236, 235, 235);
+}
+
 .flexC {
   display: flex;
   flex-direction: column;

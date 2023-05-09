@@ -24,6 +24,25 @@
   color: #61dafb;
 }
 
+.mains {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.dark {
+  background-color: RGB(60, 64, 66);
+  color:#111;
+  height: 100vh;
+}
+
+.light {
+  background-color: #fff;
+  color: #111;
+  height: 100vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

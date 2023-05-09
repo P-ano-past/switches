@@ -35,6 +35,8 @@ function Dynamic(props) {
     newItem.isActive = false;
     setFormArray([...formArray, newItem]);
 
+    setFormText({ item: "" });
+
     e.target.reset();
   };
 
@@ -107,7 +109,7 @@ function Dynamic(props) {
                     checked={item.isActive}
                     xs={3}
                   />
-                  <Col>
+                  <Col className="itemCont">
                     {index + 1}.&nbsp;{item.item}
                   </Col>
 

@@ -1,5 +1,5 @@
 import "./App.css";
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav, FormCheck } from "react-bootstrap";
 import Static from "./Components/Static/Static";
 import Dynamic from "./Components/Dynamic/Dynamic";
 import Purpose from "./Components/Purpose/Purpose";
@@ -7,6 +7,7 @@ import { useState } from "react";
 import Allstyles from "./Components/Allstyles/Allstyles";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   const [boxType, setBoxType] = useState(false);
   const [shadows, setShadows] = useState(false);
   const [borderBox, setBorderBox] = useState(false);
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
+      <Container className={darkMode ? "dark" : "light"} fluid>
         <Row>
           <Col>
             <h1>
@@ -23,7 +24,7 @@ function App() {
             </h1>
           </Col>
         </Row>
-        <Row>
+        <Row className="mains">
           <Allstyles
             boxType={boxType}
             setBoxType={setBoxType}
@@ -35,7 +36,11 @@ function App() {
             borderBox={borderBox}
             setAll={setAll}
             all={all}
+            setDarkMode={setDarkMode}
+            darkMode={darkMode}
           />
+        </Row>
+        <Row>
           <Tab.Container id="left-tabs-example" defaultActiveKey="Purpose">
             <Row>
               <Col sm={3}>
@@ -66,6 +71,8 @@ function App() {
                       placement={placement}
                       setBorderBox={setBorderBox}
                       borderBox={borderBox}
+                      setDarkMode={setDarkMode}
+                      darkMode={darkMode}
                     />
                   </Tab.Pane>
                   <Tab.Pane eventKey="Dynamic">

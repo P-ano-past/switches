@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, FormCheck } from "react-bootstrap";
 import "./Allstyles.css";
+import DarkMode from "../DarkMode/DarkMode";
 
 function Allstyles(props) {
   const [isChecked, setIsChecked] = useState(false);
@@ -60,7 +61,7 @@ function Allstyles(props) {
   };
 
   return (
-    <Container>
+    <Container className="allSCont">
       <Row>
         <Col className="allC">
           <FormCheck
@@ -76,6 +77,9 @@ function Allstyles(props) {
             All Styles:
           </p>
         </Col>
+      </Row>
+      <Row>
+        <DarkMode props={props} />
       </Row>
     </Container>
   );
