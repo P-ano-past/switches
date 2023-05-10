@@ -64,7 +64,7 @@ function Dynamic(props) {
   };
 
   return (
-    <Container className={`${shade} `}>
+    <Container className={`${shade}  `}>
       <Row className={flexR}>
         <Col
           onClick={() => {
@@ -96,8 +96,8 @@ function Dynamic(props) {
           </Form>
         </Col>
       </Row>
-      <Row>
-        <Col className={`${dark}`}>
+      <Row className="smol">
+        <Col className={``}>
           <ul>
             {formArray.map((item, index) => {
               return (
