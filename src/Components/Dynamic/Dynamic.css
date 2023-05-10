@@ -22,9 +22,23 @@
     max-height: 70vh;
 }
 
+.explain {
+  text-align: left;
+  padding-bottom: 15px;
+}
+
 .listCh {
     padding-right: 10px;
 
+}
+
+.moreInfoCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+text-align: center
+;
 }
 
 .itemCont  {

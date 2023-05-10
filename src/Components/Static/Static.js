@@ -58,7 +58,7 @@ function Static(props) {
   };
 
   return (
-    <Container className={`${shade} ${dark} sign`}>
+    <Container className={`${shade} sign`}>
       <Row>
         <Col
           onClick={() => {
