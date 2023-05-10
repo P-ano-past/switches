@@ -18,6 +18,13 @@
   align-items: center;
 }
 
+.sign{
+  /* height: 50vh; */
+  overflow: scroll;
+  position: relative;
+}
+
+
 .darkStatic {
   background-color: rgb(236, 235, 235);
 }
