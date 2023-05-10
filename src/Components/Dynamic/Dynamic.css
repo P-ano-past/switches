@@ -22,9 +22,15 @@
     max-height: 70vh;
 }
 
-.explain {
+.textOpen {
   text-align: left;
   padding-bottom: 15px;
+  animation: opening 1s ease-in-out;
+
+}
+
+.textClose {
+  animation: opening 1s ease-in-out;
 }
 
 .listCh {
@@ -36,17 +42,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-align-items: center;
-text-align: center
-;
+  align-items: center;
+  text-align: center;
 }
 
 .itemCont  {
     overflow: auto;
-    -ms-overflow-style: none; /* for Internet Explorer and Edge */
-    scrollbar-width: none; /* for Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
-    /* Hide scrollbar for Chrome, Safari, and Opera */
     &::-webkit-scrollbar {
       width: 0.5em;
       height: 0.5em;
@@ -70,6 +74,39 @@ text-align: center
       background-color: #f2f2f2;
     }
   }
+
+
+  @keyframes opening {
+    0%   {
+      opacity: 0;
+      height: 0px;
+    }
+    50%  {
+      opacity: 0.5;
+      height: 50%;
+    }
+    100% {
+      opacity: 1;
+      height: auto;
+    }
+  }
+
+  @keyframes closing {
+    0% {
+      opacity: 1;
+      height: auto;
+    }
+    50% {
+      opacity: 0.5;
+      height: 50%;
+    }
+    100% {
+      opacity: 0;
+      height: 0px;
+    }
+  }
+
+
 
   .darkDynamic, .lightDynamic {
     overflow: auto;

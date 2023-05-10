@@ -18,6 +18,7 @@ function Dynamic(props) {
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const checkSwitchType = switchType ? "switch" : "checkbox";
   const dark = props.darkMode ? "darkDynamic" : "lightDynamic";
+  const textTransition = moreInfo ? "textOpen" : "textClose";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
@@ -64,7 +65,9 @@ function Dynamic(props) {
     }
   };
 
-  const viewMore = () => {};
+  const viewMore = () => {
+    setMoreInfo(!moreInfo);
+  };
 
   return (
     <Container className={`${shade} ${dark}`}>
@@ -88,23 +91,25 @@ function Dynamic(props) {
               type={checkSwitchType}
             />
           </Col>
-          {moreInfo ? (
-            <Col className="explain">
-              When it comes to state handling, dynamic generated checkboxes
-              require more attention than static checkboxes. This is because
-              their state can change dynamically, which means that the
-              JavaScript code responsible for generating them needs to keep
-              track of their current state and update it as necessary. This can
-              involve adding or removing elements from the DOM, updating their
-              properties, and updating any data structures that store their
-              state. In this case, the checkbox enables a delete button. Both
-              the button and the checkbox are specific to the numerical item
-              they are referenced to, yet these items are not hard coded. You
-              can interact with this below:
-            </Col>
-          ) : (
-            ""
-          )}
+          <Col>
+            {moreInfo ? (
+              <Col className={`moreInfoText ${textTransition}`}>
+                When it comes to state handling, dynamic generated checkboxes
+                require more attention than static checkboxes. This is because
+                their state can change dynamically, which means that the
+                JavaScript code responsible for generating them needs to keep
+                track of their current state and update it as necessary. This
+                can involve adding or removing elements from the DOM, updating
+                their properties, and updating any data structures that store
+                their state. In this case, the checkbox enables a delete button.
+                Both the button and the checkbox are specific to the numerical
+                item they are referenced to, yet these items are not hard coded.
+                You can interact with this below:
+              </Col>
+            ) : (
+              ""
+            )}
+          </Col>
         </Row>
       </Row>
       <Row>

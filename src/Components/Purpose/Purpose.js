@@ -45,7 +45,7 @@ function Purpose(props) {
             <Col>
               <h4 className={`${heading} goalTitle`}> Static</h4>
             </Col>
-            <Col>
+            <Col className="textContent">
               <p>
                 Static generated components are created with hard-coded data and
                 are typically used for displaying information that doesn't
@@ -61,7 +61,7 @@ function Purpose(props) {
             <Col>
               <h4 className={`${heading} goalTitle`}>Dynamic</h4>
             </Col>
-            <Col>
+            <Col className="textContent">
               <p>
                 With dynamically generated components, managing state can be
                 more complicated, as the content is dynamic and can change
