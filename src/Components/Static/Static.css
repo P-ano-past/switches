@@ -74,3 +74,13 @@
     position: relative;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .sign {
+    font-size: 14px;
+    padding-bottom: 30px;
+    height:80vh;
+    overflow: scroll;
+    position: relative;
+  }
+}
