@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Form, Button, FormCheck } from "react-bootstrap";
+import { Container, Row, Col, FormCheck } from "react-bootstrap";
 import "./Allstyles.css";
 import DarkMode from "../DarkMode/DarkMode";
 
@@ -7,6 +7,7 @@ function Allstyles(props) {
   const [isChecked, setIsChecked] = useState(false);
   const [switchType, setSwitchType] = useState(false);
   const checkSwitchType = switchType ? "switch" : "checkbox";
+  const darkType = props.darkMode ? "darkSwitch" : "lightSwitch";
   useEffect(() => {
     if (props.boxType && props.shadows && props.borderBox && props.placement) {
       setIsChecked(true);
@@ -15,7 +16,7 @@ function Allstyles(props) {
       setIsChecked(false);
       props.setAll(false);
     }
-  }, [props.boxType, props.shadows, props.borderBox, props.placement]);
+  }, [props.boxType, props.shadows, props.borderBox, props.placement, props]);
 
   useEffect(() => {
     setSwitchType(props.boxType);
@@ -68,6 +69,7 @@ function Allstyles(props) {
             type={checkSwitchType}
             onChange={() => changeAll()}
             checked={isChecked}
+            className={darkType}
           />
           <p
             onClick={() => {

@@ -17,6 +17,8 @@
   color: white;
 }
 
+
+
 .nav-link-custom {
   color: rgb(192, 190, 192) !important;
 
@@ -79,15 +81,6 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 h1 {

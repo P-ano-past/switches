@@ -16,7 +16,7 @@ function Static(props) {
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const heading = showBorderBox ? "headingFonts" : "";
-  const dark = props.darkMode ? "darkStatic" : "";
+  const darkType = props.darkMode ? "darkSwitch" : "lightSwitch";
 
   useEffect(() => {
     setShowBorderBox(props.borderBox);
@@ -87,6 +87,7 @@ function Static(props) {
                         type={checkSwitchType}
                         onChange={handleMenu}
                         checked={checkMenu}
+                        className={darkType}
                       />
                     </Col>
                   </Row>
@@ -102,6 +103,7 @@ function Static(props) {
                               type={checkSwitchType}
                               onChange={checkSwitch}
                               checked={props.boxType}
+                              className={darkType}
                             />
                           </Col>
                         </Col>
@@ -112,6 +114,7 @@ function Static(props) {
                               type={checkSwitchType}
                               onChange={checkShadows}
                               checked={props.shadows}
+                              className={darkType}
                             />
                           </Col>
                         </Col>
@@ -122,6 +125,7 @@ function Static(props) {
                               type={checkSwitchType}
                               onChange={checkFlex}
                               checked={props.placement}
+                              className={darkType}
                             />
                           </Col>
                         </Col>
@@ -132,6 +136,7 @@ function Static(props) {
                               type={checkSwitchType}
                               onChange={checkBB}
                               checked={props.borderBox}
+                              className={darkType}
                             />
                           </Col>
                         </Col>
@@ -154,7 +159,7 @@ function Static(props) {
                     functions tied to this but it still functions as a check
                     box.
                   </p>
-                  <Form.Check type={checkSwitchType} />
+                  <Form.Check className={darkType} type={checkSwitchType} />
                 </Col>
               </Row>
             </li>
@@ -174,6 +179,7 @@ function Static(props) {
                     checked={isChecked}
                     type={checkSwitchType}
                     onChange={handleOnChange}
+                    className={darkType}
                   />
                 </Col>
               </Row>
@@ -192,6 +198,7 @@ function Static(props) {
                     checked={isChecked}
                     type={checkSwitchType}
                     onChange={handleOnChange}
+                    className={darkType}
                   />
                 </Col>
               </Row>
@@ -209,6 +216,7 @@ function Static(props) {
                     checked={num4}
                     type={checkSwitchType}
                     onChange={handleNum4}
+                    className={darkType}
                   />
                 </Col>
               </Row>

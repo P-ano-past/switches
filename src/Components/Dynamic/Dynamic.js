@@ -13,11 +13,10 @@ function Dynamic(props) {
   const [moreInfo, setMoreInfo] = useState(false);
   const heading = showBorderBox ? "headingFonts" : "";
   const shade = showShade ? "staticCont" : "";
-  const flex = showFlex ? "staticFlex flexR" : "";
   const flexR = showFlex ? "flexR" : "";
-  const changedBorder = showBorderBox ? "borderBubble" : "";
   const checkSwitchType = switchType ? "switch" : "checkbox";
   const dark = props.darkMode ? "darkDynamic" : "lightDynamic";
+  const darkType = props.darkMode ? "darkSwitch" : "lightSwitch";
   const textTransition = moreInfo ? "textOpen" : "textClose";
 
   useEffect(() => {
@@ -85,6 +84,7 @@ function Dynamic(props) {
                 setMoreInfo(!moreInfo);
               }}
               type={checkSwitchType}
+              className={darkType}
             />
           </Col>
           <Col>
@@ -135,7 +135,7 @@ function Dynamic(props) {
               return (
                 <li key={index} className="chbt">
                   <FormCheck
-                    className="listCh"
+                    className={`listCh ${darkType}`}
                     type={checkSwitchType}
                     onChange={() => handleCheck(index)}
                     checked={item.isActive}
