@@ -1,5 +1,5 @@
 import "./App.css";
-import { Container, Row, Col, Tab, Nav, FormCheck } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import Static from "./Components/Static/Static";
 import Dynamic from "./Components/Dynamic/Dynamic";
 import Purpose from "./Components/Purpose/Purpose";
