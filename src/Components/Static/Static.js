@@ -102,7 +102,6 @@ function Static(props) {
                         <Col sm={3} className={flex}>
                           <Col className={flexR}>
                             <p className="text">Switch type:</p>
-
                             <Form.Check
                               type={checkSwitchType}
                               onChange={checkSwitch}

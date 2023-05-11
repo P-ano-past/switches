@@ -54,7 +54,9 @@ function Purpose(props) {
                 created once and their content remains the same throughout the
                 lifetime of the application. Static components are easy to
                 create and they are very performant, as they don't require
-                additional processing to generate or update content.
+                additional processing to generate or update content. As a
+                reference, feel free to browse the codesandbox files
+                <p>"src/Components/Static/Static":</p>
               </p>
             </Col>
           </Col>
@@ -70,7 +72,9 @@ function Purpose(props) {
                 correctly to prevent performance issues and unexpected behavior.
                 One common challenge with dynamically generated components is
                 keeping track of state changes and ensuring that the correct
-                data is being displayed to the user.
+                data is being displayed to the user. As a reference, feel free
+                to browse the codesandbox files
+                <p>"src/Components/Dynamic/Dynamic":</p>
               </p>
             </Col>
           </Col>
