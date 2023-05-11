@@ -6,6 +6,7 @@ function Purpose(props) {
   const [showBorderBox, setShowBorderBox] = useState(false);
   const [showShade, setShowShade] = useState(false);
   const heading = showBorderBox ? "headingFonts" : "";
+  const pTagText = showBorderBox ? "pText" : "";
   const shade = showShade ? "staticCont" : "";
   const dark = props.darkMode ? "darkDynamic" : "lightDynamic";
 
@@ -34,7 +35,7 @@ function Purpose(props) {
       <Container>
         <Row className="goalTitle">
           <Col className="goalTitle">
-            <p>
+            <p className={pTagText}>
               The purpose of this exercise is to demonstrate state handling
               between static generated, and dynamically generated check boxes.
             </p>
@@ -46,7 +47,7 @@ function Purpose(props) {
               <h4 className={`${heading} goalTitle`}> Static</h4>
             </Col>
             <Col className="textContent">
-              <p>
+              <p className={pTagText}>
                 Static generated components are created with hard-coded data and
                 are typically used for displaying information that doesn't
                 change frequently, such as text or images. These components are
@@ -62,7 +63,7 @@ function Purpose(props) {
               <h4 className={`${heading} goalTitle`}>Dynamic</h4>
             </Col>
             <Col className="textContent">
-              <p>
+              <p className={pTagText}>
                 With dynamically generated components, managing state can be
                 more complicated, as the content is dynamic and can change
                 frequently. It's important to ensure that state is managed

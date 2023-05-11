@@ -16,6 +16,8 @@ function Static(props) {
   const flexR = showFlex ? "flexR" : "";
   const changedBorder = showBorderBox ? "borderBubble" : "";
   const heading = showBorderBox ? "headingFonts" : "";
+  const subHeading = showBorderBox ? "subHeadingFonts" : "";
+  const pTagText = showBorderBox ? "pText" : "";
   const darkType = props.darkMode ? "darkSwitch" : "lightSwitch";
 
   useEffect(() => {
@@ -78,11 +80,13 @@ function Static(props) {
                 <Col>
                   <Row>
                     <Col className={flexR}>
-                      <h3 className={heading}>
+                      <h3 className={subHeading}>
                         <p>1.</p>
                       </h3>
 
-                      <p>This checkbox opens a menu for further interaction.</p>
+                      <p className={pTagText}>
+                        This checkbox opens a menu for further interaction.
+                      </p>
                       <Form.Check
                         type={checkSwitchType}
                         onChange={handleMenu}
@@ -151,10 +155,10 @@ function Static(props) {
             <li className={changedBorder}>
               <Row>
                 <Col className={flexR}>
-                  <h3 className={heading}>
+                  <h3 className={subHeading}>
                     <p>2.</p>
                   </h3>
-                  <p>
+                  <p className={pTagText}>
                     This checkbox does nothing. There are no state handling
                     functions tied to this but it still functions as a check
                     box.
@@ -166,10 +170,10 @@ function Static(props) {
             <li className={changedBorder}>
               <Row>
                 <Col className={flexR}>
-                  <h3 className={heading}>
+                  <h3 className={subHeading}>
                     <p>3.</p>
                   </h3>
-                  <p>
+                  <p className={pTagText}>
                     This checkbox has state handling that links it to this
                     checkbox and number 4 because of its shared state value.
                   </p>
@@ -187,10 +191,10 @@ function Static(props) {
             <li className={changedBorder}>
               <Row>
                 <Col className={flexR}>
-                  <h4 className={heading}>
+                  <h4 className={subHeading}>
                     <p>4.</p>
                   </h4>
-                  <p>
+                  <p className={pTagText}>
                     This checkbox has state handling that links it to this
                     checkbox and number 3 because of its shared state value.
                   </p>
@@ -206,11 +210,13 @@ function Static(props) {
             <li className={changedBorder}>
               <Row>
                 <Col className={flexR}>
-                  <h3 className={heading}>
+                  <h3 className={subHeading}>
                     <p>5.</p>
                   </h3>
 
-                  <p>This checkbox renders more information.</p>
+                  <p className={pTagText}>
+                    This checkbox renders more information.
+                  </p>
 
                   <Form.Check
                     checked={num4}
@@ -227,7 +233,7 @@ function Static(props) {
       <Row>
         {num4 ? (
           <Col>
-            <p>
+            <p className={pTagText}>
               This information is being rendered by its own hard coded state
               handling functions. The ternary operator that renders this text
               relies on the state handling written for checkbox 5 for this to be
@@ -236,7 +242,7 @@ function Static(props) {
           </Col>
         ) : (
           <Col>
-            <p>
+            <p className={pTagText}>
               To see more information here, please enable checkbox number 5.
             </p>
           </Col>

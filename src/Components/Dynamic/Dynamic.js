@@ -12,6 +12,7 @@ function Dynamic(props) {
   const [switchType, setSwitchType] = useState();
   const [moreInfo, setMoreInfo] = useState(false);
   const heading = showBorderBox ? "headingFonts" : "";
+  const pTagText = showBorderBox ? "pText" : "";
   const shade = showShade ? "staticCont" : "";
   const flexR = showFlex ? "flexR" : "";
   const checkSwitchType = switchType ? "switch" : "checkbox";
@@ -89,7 +90,7 @@ function Dynamic(props) {
           </Col>
           <Col>
             {moreInfo ? (
-              <Col className={`moreInfoText ${textTransition}`}>
+              <Col className={`moreInfoText ${textTransition} ${pTagText}`}>
                 When it comes to state handling, dynamic generated checkboxes
                 require more attention than static checkboxes. This is because
                 their state can change dynamically, which means that the
@@ -141,7 +142,7 @@ function Dynamic(props) {
                     checked={item.isActive}
                     xs={3}
                   />
-                  <Col className="itemCont">
+                  <Col className={`itemCont ${pTagText}`}>
                     {index + 1}.&nbsp;{item.item}
                   </Col>
 
