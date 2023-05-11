@@ -17,117 +17,119 @@ function App() {
   return (
     <div className="App">
       <Container className={darkMode ? "dark dark-mode" : "light"} fluid>
-        <Row>
-          <Col>
-            <h1>
-              <p>Dynamically generated vs static: </p>
-            </h1>
-          </Col>
-        </Row>
-        <Row className="mains">
-          <Allstyles
-            boxType={boxType}
-            setBoxType={setBoxType}
-            shadows={shadows}
-            setShadows={setShadows}
-            setPlacement={setPlacement}
-            placement={placement}
-            setBorderBox={setBorderBox}
-            borderBox={borderBox}
-            setAll={setAll}
-            all={all}
-            setDarkMode={setDarkMode}
-            darkMode={darkMode}
-          />
-        </Row>
-        <Row>
-          <Tab.Container id="left-tabs-example" defaultActiveKey="Purpose">
-            <Row>
-              <Col sm={3}>
-                <Nav variant="pills" className="flex-column">
-                  <Nav.Item>
-                    <Nav.Link
-                      className={`  ${
-                        darkMode ? "darkNav nav-link-custom" : ""
-                      }`}
-                      eventKey="Purpose"
-                    >
-                      Purpose
-                    </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link
-                      className={`${
-                        darkMode ? "darkNav nav-link-custom " : ""
-                      }`}
-                      eventKey="Static"
-                    >
-                      Static
-                    </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link
-                      className={` ${
-                        darkMode ? "darkNav nav-link-custom" : ""
-                      }`}
-                      eventKey="Dynamic"
-                    >
-                      Dynamic
-                    </Nav.Link>
-                  </Nav.Item>
-                </Nav>
-              </Col>
-              <Col sm={9}>
-                <Tab.Content>
-                  <Tab.Pane eventKey="Purpose">
-                    <Purpose
-                      boxType={boxType}
-                      setBoxType={setBoxType}
-                      shadows={shadows}
-                      setShadows={setShadows}
-                      setPlacement={setPlacement}
-                      placement={placement}
-                      setBorderBox={setBorderBox}
-                      borderBox={borderBox}
-                      setAll={setAll}
-                      all={all}
-                      setDarkMode={setDarkMode}
-                      darkMode={darkMode}
-                    />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="Static">
-                    <Static
-                      boxType={boxType}
-                      setBoxType={setBoxType}
-                      shadows={shadows}
-                      setShadows={setShadows}
-                      setPlacement={setPlacement}
-                      placement={placement}
-                      setBorderBox={setBorderBox}
-                      borderBox={borderBox}
-                      setDarkMode={setDarkMode}
-                      darkMode={darkMode}
-                    />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="Dynamic">
-                    <Dynamic
-                      boxType={boxType}
-                      setBoxType={setBoxType}
-                      shadows={shadows}
-                      setShadows={setShadows}
-                      setPlacement={setPlacement}
-                      placement={placement}
-                      setBorderBox={setBorderBox}
-                      borderBox={borderBox}
-                      setDarkMode={setDarkMode}
-                      darkMode={darkMode}
-                    />
-                  </Tab.Pane>
-                </Tab.Content>
-              </Col>
-            </Row>
-          </Tab.Container>
-        </Row>
+        <Container>
+          <Row>
+            <Col>
+              <h1>
+                <p>Dynamically generated vs static: </p>
+              </h1>
+            </Col>
+          </Row>
+          <Row className="mains">
+            <Allstyles
+              boxType={boxType}
+              setBoxType={setBoxType}
+              shadows={shadows}
+              setShadows={setShadows}
+              setPlacement={setPlacement}
+              placement={placement}
+              setBorderBox={setBorderBox}
+              borderBox={borderBox}
+              setAll={setAll}
+              all={all}
+              setDarkMode={setDarkMode}
+              darkMode={darkMode}
+            />
+          </Row>
+          <Row>
+            <Tab.Container id="left-tabs-example" defaultActiveKey="Purpose">
+              <Row>
+                <Col sm={3}>
+                  <Nav variant="pills" className="flex-column">
+                    <Nav.Item>
+                      <Nav.Link
+                        className={`  ${
+                          darkMode ? "darkNav nav-link-custom" : ""
+                        }`}
+                        eventKey="Purpose"
+                      >
+                        Purpose
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        className={`${
+                          darkMode ? "darkNav nav-link-custom " : ""
+                        }`}
+                        eventKey="Static"
+                      >
+                        Static
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        className={` ${
+                          darkMode ? "darkNav nav-link-custom" : ""
+                        }`}
+                        eventKey="Dynamic"
+                      >
+                        Dynamic
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
+                <Col sm={9}>
+                  <Tab.Content>
+                    <Tab.Pane eventKey="Purpose">
+                      <Purpose
+                        boxType={boxType}
+                        setBoxType={setBoxType}
+                        shadows={shadows}
+                        setShadows={setShadows}
+                        setPlacement={setPlacement}
+                        placement={placement}
+                        setBorderBox={setBorderBox}
+                        borderBox={borderBox}
+                        setAll={setAll}
+                        all={all}
+                        setDarkMode={setDarkMode}
+                        darkMode={darkMode}
+                      />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="Static">
+                      <Static
+                        boxType={boxType}
+                        setBoxType={setBoxType}
+                        shadows={shadows}
+                        setShadows={setShadows}
+                        setPlacement={setPlacement}
+                        placement={placement}
+                        setBorderBox={setBorderBox}
+                        borderBox={borderBox}
+                        setDarkMode={setDarkMode}
+                        darkMode={darkMode}
+                      />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="Dynamic">
+                      <Dynamic
+                        boxType={boxType}
+                        setBoxType={setBoxType}
+                        shadows={shadows}
+                        setShadows={setShadows}
+                        setPlacement={setPlacement}
+                        placement={placement}
+                        setBorderBox={setBorderBox}
+                        borderBox={borderBox}
+                        setDarkMode={setDarkMode}
+                        darkMode={darkMode}
+                      />
+                    </Tab.Pane>
+                  </Tab.Content>
+                </Col>
+              </Row>
+            </Tab.Container>
+          </Row>
+        </Container>
       </Container>
     </div>
   );
