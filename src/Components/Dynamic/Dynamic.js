@@ -74,7 +74,7 @@ function Dynamic(props) {
           }}
         >
           <h1 className={heading}>
-            <p>Dynamic checkbox example:</p>
+            <p>Dynamic checkbox example</p>
           </h1>
         </Col>
         <Row className="moreInfoCont">

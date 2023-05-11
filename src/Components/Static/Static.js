@@ -68,7 +68,7 @@ function Static(props) {
           }}
         >
           <h1 className={heading}>
-            <p>Static</p>
+            <p>Static checkbox example</p>
           </h1>
         </Col>
       </Row>
