@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Container className={darkMode ? "dark" : "light"} fluid>
+      <Container className={darkMode ? "dark dark-mode" : "light"} fluid>
         <Row>
           <Col>
             <h1>
@@ -46,13 +46,34 @@ function App() {
               <Col sm={3}>
                 <Nav variant="pills" className="flex-column">
                   <Nav.Item>
-                    <Nav.Link eventKey="Purpose">Purpose</Nav.Link>
+                    <Nav.Link
+                      className={`  ${
+                        darkMode ? "darkNav nav-link-custom" : ""
+                      }`}
+                      eventKey="Purpose"
+                    >
+                      Purpose
+                    </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Static">Static</Nav.Link>
+                    <Nav.Link
+                      className={`${
+                        darkMode ? "darkNav nav-link-custom " : ""
+                      }`}
+                      eventKey="Static"
+                    >
+                      Static
+                    </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="Dynamic">Dynamic</Nav.Link>
+                    <Nav.Link
+                      className={` ${
+                        darkMode ? "darkNav nav-link-custom" : ""
+                      }`}
+                      eventKey="Dynamic"
+                    >
+                      Dynamic
+                    </Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>

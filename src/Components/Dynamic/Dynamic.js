@@ -65,10 +65,6 @@ function Dynamic(props) {
     }
   };
 
-  const viewMore = () => {
-    setMoreInfo(!moreInfo);
-  };
-
   return (
     <Container className={`${shade} ${dark}`}>
       <Row className={flexR}>

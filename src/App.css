@@ -17,6 +17,43 @@
   color: white;
 }
 
+.nav-link-custom {
+  color: rgb(192, 190, 192) !important;
+
+}
+
+.nav-link-custom:hover,
+.nav-link-custom:focus,
+.nav-link-custom:active {
+  color: rgb(192, 190, 192) !important;
+  background: rgb(52, 53, 65) !important;
+}
+
+.darkNav[aria-selected="true"] {
+  color: rgb(192, 190, 192) !important;
+  background-color: rgb(52, 53, 65) !important;
+  background: RGB(52, 53, 65) !important;
+}
+
+.darkNav:active {
+  color: rgb(192, 190, 192) !important;
+  background-color: rgb(0, 0, 0) !important;
+  background: rgb(52, 53, 65) !important;
+  border: 2px solid rgb(29, 29, 29) !important;
+}
+.darkNav:focus{
+  color: rgb(192, 190, 192) !important;
+  background-color: rgb(0, 0, 0) !important;
+  background: rgb(52, 53, 65) !important;
+  border: 2px solid rgb(53, 53, 53) !important;
+}
+.darkNav:focus-visible {
+  color: rgb(192, 190, 192) !important;
+  background-color:rgb(52, 53, 65) !important;
+  background: rgb(52, 53, 65) !important;
+  border: 2px solid black !important;
+}
+
 .App-link {
   color: #61dafb;
 }
