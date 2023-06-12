@@ -11,6 +11,7 @@
     align-items: center;
     height: 39px;
     border-bottom: 1px solid rgb(216, 216, 216);
+
 }
 
 .darkDynamic {
@@ -35,7 +36,10 @@
 
 .listCh {
     padding-right: 10px;
+}
 
+.form-check-input {
+ cursor: pointer;
 }
 
 .moreInfoCont {
